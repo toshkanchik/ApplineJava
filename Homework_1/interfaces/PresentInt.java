@@ -1,11 +1,13 @@
-package HomeWork_1;
+package interfaces;
+
+import sweetsPac.Sweets;
 
 public interface PresentInt {
 	public boolean addItem(Sweets toAdd); //add new sweet into the box
 	public boolean removeItem(int i); //remove i element
 	public boolean removeItem(); //remove the last one
 	public void printInfo();
-	public void printWeight();
-	public void printPrice();
+//	public void printWeight();
+//	public void printPrice();
 
 }

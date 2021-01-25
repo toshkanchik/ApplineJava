@@ -1,51 +1,49 @@
 package HomeWork_1;
 
+import boxes.SweetsBox;
+import sweetsPac.*;
+
 public class HomeWork_1 {
 
 	public static void main(String[] args) {
-		SweetsBox box1 = new SweetsBox();
-		Sweets sweet1 = new Iriska("qwer",1,2);
-		box1.addItem(sweet1);
-		sweet1 = new BubbleGum("asdf",3,4);
-		box1.addItem(sweet1);
-		sweet1 = new Chocolate("zxcv",5,6);
-		box1.addItem(sweet1);
-		box1.printInfo(); //test addItem + print
+		SweetsBox boxInstance = new SweetsBox();
+		boxInstance.addItem(new Iriska("qwer",1,2,5));
+		boxInstance.addItem(new BubbleGum("asdf",3,4,"mint"));
+		boxInstance.addItem(new Chocolate("zxcv",5,6,"vanilla"));
+		System.out.println("test addItem + print:");
+		boxInstance.printInfo(); //test addItem + print
 		
 		
-		box1.removeItem(10);
-		box1.printInfo(); //test remove index out of bounds
+		//boxInstance.removeItem(10);
+		System.out.println("test remove index out of bounds: " + boxInstance.removeItem(10));
+		boxInstance.printInfo(); //test remove index out of bounds
 		
-		box1.removeItem(1);
-		box1.printInfo(); //test remove index
+//		boxInstance.removeItem(1);
+		System.out.println("test remove index 1: " + boxInstance.removeItem(1));
+		boxInstance.printInfo(); //test remove index
 		
-		box1.removeItem();
-		box1.printInfo(); //test remove last
+//		boxInstance.removeItem();
+		System.out.println("test remove last: " + boxInstance.removeItem());
+		boxInstance.printInfo(); //test remove last
 		
-		sweet1 = new BubbleGum("zaq",7,8,"mint");
-		box1.addItem(sweet1);
-		box1.printInfo();
-		box1.printPrice();
-		box1.printWeight(); //test print total
+		boxInstance.removeItem();
+		boxInstance.removeItem();
+		boxInstance.removeItem();
+		System.out.println("test remove from empty box: " + boxInstance.removeItem());
+		boxInstance.printInfo(); //test remove from empty box
 		
-		box1.removeItem();
-		box1.removeItem();
-		box1.removeItem();
-		box1.printInfo(); //test remove from empty box
-		
-		box1.addItem(new Iriska("qwer",1,6,3));
-		box1.addItem(new Iriska("asdf",6,1,3));
-		box1.addItem(new Iriska("zxcv",3,4,3));
-		box1.addItem(new Iriska("zaq",2,5,3));
-		box1.addItem(new Iriska("xsw",5,2,3));
-		box1.addItem(new Iriska("cde",4,3,3));
-		box1.printInfo();
-		box1.printWeight();
-//		box1.removeToWeightByPrice(16);//test for additional task
-//		box1.removeToWeightByWeight(16);//test for additional task
-		box1.removeToWeight(17, false);//test for additional task
-		box1.printInfo();
-		box1.printWeight();
+		boxInstance.addItem(new Iriska("qwer",1,6,3));
+		boxInstance.addItem(new Iriska("asdf",6,1,3));
+		boxInstance.addItem(new Iriska("zxcv",3,4,3));
+		boxInstance.addItem(new Iriska("zaq",2,5,3));
+		boxInstance.addItem(new Iriska("xsw",5,2,3));
+		boxInstance.addItem(new Iriska("cde",4,3,3));
+		System.out.println("test for additional task");
+		boxInstance.printInfo();
+//		boxInstance.removeToWeightByPrice(16);//test for additional task
+//		boxInstance.removeToWeightByWeight(16);//test for additional task
+		boxInstance.removeToWeight(17, false);//test for additional task
+		boxInstance.printInfo();
 	}
 
 }

@@ -1,6 +1,6 @@
-package HomeWork_1;
+package sweetsPac;
 
-public class Sweets {
+public abstract class Sweets {
 	public String name;
 	public int weight;
 	public int price;
@@ -8,9 +8,6 @@ public class Sweets {
 	
 	
 	public Sweets(){
-		name = "Default";
-		weight = -1;
-		price = -1;
 	}
 	
 	public Sweets(String name, int weight, int price){
@@ -32,8 +29,5 @@ public class Sweets {
 		return price;
 	}
 	
-	public  String getinfo() {
-		//define this method in child classes to get additional info
-		return null;	
-	}
+	public abstract String getinfo();
 }
