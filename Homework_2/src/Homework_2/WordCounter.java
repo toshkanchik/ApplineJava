@@ -14,7 +14,7 @@ public class WordCounter {
         Scanner sc = new Scanner(System.in);
         String filePath = sc.nextLine();
         File enteredPathFile = null;
-        try{
+        try{ // possible exceptions from File(), .exists, .nextLine()
             while (true){
                 enteredPathFile = new File(currPath + "//" + filePath);
                 if(enteredPathFile.exists()){
@@ -35,10 +35,10 @@ public class WordCounter {
             return;
         }
 
-        Scanner scanner = null;
+//        Scanner scanner = null;
         TreeMap<String, Integer> words = new TreeMap<>();
-        try {
-            scanner = new Scanner(enteredPathFile);
+        try { // possible exceptions from Scanner(), .hasNext, .next(), .put(), .get()
+            Scanner scanner = new Scanner(enteredPathFile);
             scanner.useDelimiter("[,;:!&?()\"\\/\\-_\\s\\.]+"); //RegExp should have been like this:   ([\.,;:!?&\-_'"\(\)\s])+
             while (scanner.hasNext()) {  //read file + put words into TreeMap while counting number of encounters for each one
                 String word = scanner.next();
@@ -49,7 +49,8 @@ public class WordCounter {
                     words.put(word, 1);
                 }
             }
-        } catch (NullPointerException|FileNotFoundException|IllegalStateException|NoSuchElementException e){
+        } catch (NullPointerException|FileNotFoundException|IllegalStateException|NoSuchElementException|
+                ClassCastException e){
             e.printStackTrace();
             return;
         }
@@ -61,7 +62,7 @@ public class WordCounter {
         String mostUsedWord = "";
         for (Map.Entry<String, Integer> item : words.entrySet()) {//accumulate into mostUsedWord all words that have most encounters
             if (item.getValue() == maxEncounters) {
-                try {
+                try { // possible exceptions from .join
                     mostUsedWord = String.join(", ", mostUsedWord, item.getKey());
                 } catch (NullPointerException e){
                     e.printStackTrace();
