@@ -30,30 +30,30 @@ public class WordCounter {
                 filePath = sc.nextLine();
             }
 
-        }catch (NullPointerException e){
+        }catch (NullPointerException|SecurityException|java.util.NoSuchElementException|IllegalStateException e) {
             e.printStackTrace();
+            return;
         }
 
         Scanner scanner = null;
+        TreeMap<String, Integer> words = new TreeMap<>();
         try {
             scanner = new Scanner(enteredPathFile);
-        } catch (FileNotFoundException e) {
+            scanner.useDelimiter("[,;:!&?()\"\\/\\-_\\s\\.]+"); //RegExp should have been like this:   ([\.,;:!?&\-_'"\(\)\s])+
+            while (scanner.hasNext()) {  //read file + put words into TreeMap while counting number of encounters for each one
+                String word = scanner.next();
+                word = word.toLowerCase(Locale.ROOT);
+                if (words.containsKey(word)) {
+                    words.put(word, words.get(word) + 1);
+                } else {
+                    words.put(word, 1);
+                }
+            }
+        } catch (NullPointerException|FileNotFoundException|IllegalStateException|NoSuchElementException e){
             e.printStackTrace();
-            scanner.close();
             return;
         }
-        scanner.useDelimiter("[,;:!&?()\"\\/\\-_\\s\\.]+"); //RegExp should have been like this:   ([\.,;:!?&\-_'"\(\)\s])+
-        TreeMap<String, Integer> words = new TreeMap<>();
-        while (scanner.hasNext()){  //read file + put words into TreeMap while counting number of encounters for each one
-            String word = scanner.next();
-            word = word.toLowerCase(Locale.ROOT);
-            if(words.containsKey(word)){
-                words.put(word, words.get(word) + 1);
-            }
-            else{
-                words.put(word, 1);
-            }
-        }
+
         for (Map.Entry<String, Integer> entry : words.entrySet()) {//print out sorted list of words + number of encounters
             System.out.println(entry.getKey() + " => " + entry.getValue());
         }
@@ -61,7 +61,12 @@ public class WordCounter {
         String mostUsedWord = "";
         for (Map.Entry<String, Integer> item : words.entrySet()) {//accumulate into mostUsedWord all words that have most encounters
             if (item.getValue() == maxEncounters) {
-                mostUsedWord = String.join(", ", mostUsedWord, item.getKey());
+                try {
+                    mostUsedWord = String.join(", ", mostUsedWord, item.getKey());
+                } catch (NullPointerException e){
+                    e.printStackTrace();
+                    return;
+                }
             } else if (item.getValue() > maxEncounters) {
                 maxEncounters = item.getValue();
                 mostUsedWord = item.getKey();
