@@ -1,0 +1,36 @@
+[
+  {
+    "name": "IP_Ivanov",
+    "phone": "+7 666 555 44 33",
+    "address": "Msk, Tverskaya 1",
+    #"foundationDate": "Jan 29, 2021, 10:00:07 PM",
+	"foundationDate": "1991-11-20",
+    "assets": [
+      {
+        "id": 1,
+        "name": "GazMyas",
+        #"date": "Jan 29, 2021, 10:00:07 PM",
+		"date": "1992-10-10",
+        "quantity": 10,
+        "currency": "RUB"
+      }
+    ]
+  },
+  {
+    "name": "IP_Petrov",
+    "phone": "+7 666 555 44 33",
+    "address": "Msk, Tverskaya 1",
+    #"foundationDate": "Jan 29, 2021, 10:00:07 PM",
+	"foundationDate": "1993-10-10",
+    "assets": [
+      {
+        "id": 1,
+        "name": "GazMyas",
+        #"date": "Jan 29, 2021, 10:00:07 PM",
+		"date": "1994-10-10",
+        "quantity": 10,
+        "currency": "RUB"
+      }
+    ]
+  }
+]
