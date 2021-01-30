@@ -8,9 +8,9 @@
     "assets": [
       {
         "id": 1,
-        "name": "GazMyas",
+        "name": "Gold",
         #"date": "Jan 29, 2021, 10:00:07 PM",
-		"date": "1992-10-10",
+		"date": "1992-11-20",
         "quantity": 10,
         "currency": "RUB"
       }
@@ -24,12 +24,20 @@
 	"foundationDate": "1993-10-10",
     "assets": [
       {
-        "id": 1,
-        "name": "GazMyas",
+        "id": 2,
+        "name": "Oil",
         #"date": "Jan 29, 2021, 10:00:07 PM",
-		"date": "1994-10-10",
-        "quantity": 10,
-        "currency": "RUB"
+		"date": "1994-07-11",
+        "quantity": 15,
+        "currency": "EUR"
+      },
+	  {
+        "id": 3,
+        "name": "Coal",
+        #"date": "Jan 29, 2021, 10:00:07 PM",
+		"date": "2022-12-10",
+        "quantity": 20,
+        "currency": "USD"
       }
     ]
   }
