@@ -1,5 +1,6 @@
 package companiesViewer.company;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Asset {
@@ -40,6 +41,11 @@ public class Asset {
 
     public Currency getCurrency() {
         return currency;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %s; Name: %s\n",this.id, this.name);
     }
 }
 

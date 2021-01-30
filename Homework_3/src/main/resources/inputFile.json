@@ -3,13 +3,11 @@
     "name": "IP_Ivanov",
     "phone": "+7 666 555 44 33",
     "address": "Msk, Tverskaya 1",
-    #"foundationDate": "Jan 29, 2021, 10:00:07 PM",
 	"foundationDate": "1991-11-20",
     "assets": [
       {
         "id": 1,
         "name": "Gold",
-        #"date": "Jan 29, 2021, 10:00:07 PM",
 		"date": "1992-11-20",
         "quantity": 10,
         "currency": "RUB"
@@ -20,13 +18,11 @@
     "name": "IP_Petrov",
     "phone": "+7 666 555 44 33",
     "address": "Msk, Tverskaya 1",
-    #"foundationDate": "Jan 29, 2021, 10:00:07 PM",
 	"foundationDate": "1993-10-10",
     "assets": [
       {
         "id": 2,
         "name": "Oil",
-        #"date": "Jan 29, 2021, 10:00:07 PM",
 		"date": "1994-07-11",
         "quantity": 15,
         "currency": "EUR"
@@ -34,9 +30,37 @@
 	  {
         "id": 3,
         "name": "Coal",
-        #"date": "Jan 29, 2021, 10:00:07 PM",
 		"date": "2022-12-10",
         "quantity": 20,
+        "currency": "USD"
+      }
+    ]
+  },
+  {
+    "name": "IP_Sidorov",
+    "phone": "+7 666 555 44 33",
+    "address": "Msk, Tverskaya 1",
+	"foundationDate": "2001-07-01",
+    "assets": [
+      {
+        "id": 4,
+        "name": "IT",
+		"date": "2031-07-11",
+        "quantity": 6,
+        "currency": "EUR"
+      },
+	  {
+        "id": 5,
+        "name": "Real estates",
+		"date": "2031-07-11",
+        "quantity": 15,
+        "currency": "RUB"
+      },
+	  {
+        "id": 6,
+        "name": "Transporting",
+		"date": "2019-12-10",
+        "quantity": 12,
         "currency": "USD"
       }
     ]
